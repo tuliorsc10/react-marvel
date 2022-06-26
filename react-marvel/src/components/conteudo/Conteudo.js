@@ -11,26 +11,27 @@ function PegaDados() {
     
     useEffect(() => {
         axios.get(`http://gateway.marvel.com/v1/public/comics?ts=${timeStamp}&apikey=${apiKey}&hash=${md5}`)
-        .then((response) => {
-            const data = response.data.data.results
-            console.log(data)
-            setDados(data)
-        },[])
-    })
+
+            .then((response) => {
+                const data = response.data.data.results
+                setDados(data)
+            })
+
+            .catch((Error) => {
+                console.log(Error)
+            })     
+    }, [setDados])
     
+        
 
     return (
         <>
-        {dados.map((item) => (
+            {dados.map((item) => (
             <div key={item.id}>
                 <h2>{item.title}</h2>
                 <h3>{item.description}</h3>
-                <img src={item.thumbnail.path + "/retrato_pequeno.jpg"} alt="jpg"/>
-                {console.log(item.thumbnail.path + "/retrato_fantástico.jpg")}
+                <img src={item.thumbnail.path + "/portrait_fantastic.jpg"} alt="" />
             </div>
-            
-            
-            
         ))}
         </>
     )
