@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./style.scss";
 
 const timeStamp = '1656097826317';
 const apiKey = 'f9f96a867de4ee807d740e4097757ccd'
@@ -39,9 +40,16 @@ function Pesquisa() {
     console.log(empurraId)
     console.log(comics)
     return(
-        <div>
-            <input onChange={(event) => setNome(event.target.value)}/>
-            <button onClick={() => pegaId(nome)}>Achar</button>
+        <div id="body">
+            
+                <div id="pesquisa">
+                    <div id="input">
+                        <input onChange={(event) => setNome(event.target.value)}/>
+                    </div>
+                    <button onClick={() => pegaId(nome)}>Achar</button>
+                </div>
+            
+            
             {dadosTitle.map((item) => (
                 <div key={item.id}>
                     <img src={item.thumbnail.path + "/portrait_uncanny.jpg"} alt=""/>
