@@ -43,26 +43,34 @@ function Pesquisa() {
         <div id="body">
             
                 <div id="pesquisa">
-                    <div id="input">
-                        <input onChange={(event) => setNome(event.target.value)}/>
-                    </div>
-                    <button onClick={() => pegaId(nome)}>Achar</button>
-                </div>
-            
-            
-            {dadosTitle.map((item) => (
-                <div key={item.id}>
-                    <img src={item.thumbnail.path + "/portrait_uncanny.jpg"} alt=""/>
-                </div>
+                    <div className="heroi">
+                        {dadosTitle.map((item) => (
+                            <div key={item.id} id="imgHeroi">
+                                <img src={item.thumbnail.path + "/portrait_uncanny.jpg"} alt=""/>
+                            </div>
 
-            ))}
-            {comics.map((item) => (
-                <div key={item.id}>
-                    <h2>{item.title}</h2>
-                    <img src={item.thumbnail.path + "/portrait_uncanny.jpg"} alt=""/>
+                        ))}
+                    </div>
+                    <div id="input">
+                        <input onChange={(event) => setNome(event.target.value)} placeholder="Escolha seu Herói"/>
+                    </div>
+                    <div id="botao">
+                        <button onClick={() => pegaId(nome)}>Achar</button>
+                    </div>
                     
                 </div>
-            ))}
+            
+            <div className="cards">
+                {comics.map((item) => (
+                    <div key={item.id} id="quadrinhos">
+                        <h2 id="titulo">{item.title}</h2>
+                        <div id="card">
+                            <img src={item.thumbnail.path + "/portrait_uncanny.jpg"} alt="" id="imagem"/>
+                        </div>
+                    </div>
+                ))}
+            </div>
+           
         </div>
     )
 }
