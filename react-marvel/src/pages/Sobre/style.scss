@@ -1,0 +1,43 @@
+@import '../../styles/abstract/_variaveis.scss';
+body {
+    margin: 0;
+    background-color: $cor-quartenaria ;
+    section {
+        display: flex;
+        justify-content: center;
+        h1 {
+            display: flex;
+            justify-content: center;
+            margin-left: 5%;
+            color: $cor-primaria;
+            text-shadow: 0 0 1px white ;
+            margin-top: 1.2rem;
+            font-family: $fonteTexto;
+            width: calc(100% - 20%);
+        } 
+        
+    }
+    #texto {
+        display: flex;
+        justify-content: center;
+        height: 400px;
+        max-width: 600px;
+        text-align: center;
+        padding: 1rem;
+        margin: auto;
+        font-family: $fonteTexto;
+        align-items: center;
+        }
+    
+    
+}
+@media screen and (max-width:450px) {
+    body {
+        #texto {
+            text-align: justify;
+        }
+    }
+   
+}
+
+
